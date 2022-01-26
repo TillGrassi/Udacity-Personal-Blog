@@ -1,0 +1,94 @@
+/*Layout*/
+.container-post {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "hd"
+    "nav"
+    "aut"
+    "main"
+    "q"
+    "ft";
+}
+
+header {
+    grid-area: hd;
+}
+
+.menu {
+    grid-area: nav;
+}
+
+/*Styling*/
+.author {
+    grid-area: aut;
+    background-color: #d6f5f5;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px;
+}
+
+.author-name {
+    display: flex;
+    flex-direction: row;
+}
+.avatar {
+    height: 50px;
+    width: 50px;
+    border: 2px solid lightgrey;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+article {
+    grid-area: main;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.post-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.quote {
+    grid-area: q;
+    background-color: #d6f5f5;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px;
+}
+
+footer {
+    grid-area: ft;
+}
+/*Social Media Buttons from https://www.w3schools.com/howto/howto_css_social_media_buttons.asp*/
+.fa {
+  padding: 20px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+/*Responsivness*/
+@media (min-width:600px) {
+    .container-post {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "hd hd"
+        "nav aut"
+        "q main"
+        "ft ft";
+    }
+    .post-img {
+        float: right;
+        margin: 5px;
+    }
+}

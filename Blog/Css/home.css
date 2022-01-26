@@ -1,0 +1,108 @@
+/*Setting up the main grid*/
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "hd"
+    "nav"
+    "main"
+    "ft";
+}
+
+header {
+    grid-area: hd;
+}
+
+.menu {
+    grid-area: nav;
+}
+
+.posts {
+    grid-area: main;
+}
+
+footer {
+    grid-area: ft;
+}
+
+.card:hover {
+    background-color: #3cc;
+}
+
+/*Styling of the cards*/
+.card {
+    grid-area: main;
+    height: auto;
+    width: auto;
+    border-radius: 15px;
+    background-color: #d6f5f5;
+    margin: 10px;
+    padding: 10px;
+    align-self: auto;
+    box-shadow: 2px 2px 5px;
+}
+
+.picture {
+    border-radius: 5px;
+    height: 200px;
+    width: 300px;
+}
+
+.button {
+    margin-left: auto;
+}
+
+button {
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid #3cc;
+}
+
+/*Responsivness*/
+@media (min-width:600px) and (max-width:900px) {
+    .main {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "hd hd"
+        "nav main"
+        "ft ft";
+    }
+
+    .menu {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .posts {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width:901px) {
+    .main {
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "hd hd hd"
+        "nav main main"
+        "ft ft ft";
+    }
+
+    .menu {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .posts {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
